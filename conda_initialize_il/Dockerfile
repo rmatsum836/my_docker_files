@@ -5,12 +5,11 @@ ENV PATH /opt/conda/bin:$PATH
 ENV MOSDEF https://github.com/mosdef-hub
 ENV PY_VER 3.7
 
+# Add files
+ADD . / /tmp/
+
 #USER anaconda
 USER root
-
-# Copy requirements.txt
-COPY initialize.py /tmp/
-COPY carbon.xml /tmp/
 
 # Set workdir
 WORKDIR /tmp
